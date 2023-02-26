@@ -11,11 +11,6 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json())
 
-/* app.use(require('./routes/booking.route'))
-app.use(require('./routes/car.route'))
-app.use(require('./routes/dialog.route'))
-app.use(require('./routes/user.route')) */
-
 app.use('/api/auth', userRoute)
 app.use('/api/messages', require('./routes/messages.route'))
 
