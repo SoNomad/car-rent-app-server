@@ -63,7 +63,7 @@ module.exports.UserController = {
       const userData = await User.findByIdAndUpdate(userId, {
         isAvatarImageSet: true,
         avatarImage,
-      })
+      }, {new: true})
       return res.json({
         isSet: userData.isAvatarImageSet,
         image: userData.avatarImage,
