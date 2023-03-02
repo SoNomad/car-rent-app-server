@@ -3,13 +3,14 @@ const Car = require('../models/Car.model');
 module.exports.carsController = {
   addCar: async (req, res) => {
     try {
-      const { name, engine, seats, payment, imageUrl } = req.body;
+      const { name, type, engine, seats, payPerDay, imageUrl } = req.body;
 
       const car = await Car.create({
         name,
+        type,
         engine,
         seats,
-        payment,
+        payPerDay,
         imageUrl,
       });
       return res.json(car);
@@ -28,8 +29,7 @@ module.exports.carsController = {
 
   deleteCar: async (req, res) => {
     try {
-      const car = await Car.findById(req.body.id);
-      await car.remove();
+      const car = await Car.findByIdAndRemove(req.body.id);
       return res.json('авто удалено');
     } catch (error) {
       return res.json(error);
@@ -38,27 +38,22 @@ module.exports.carsController = {
 
   editCar: async (req, res) => {
     try {
-      const { name, engine, seats, payment, imageUrl } = req.body;
+      const { name, type, engine, seats, payPerDay, imageUrl } = req.body;
 
-      const car = await Car.updateOne({
-        name,
-        engine,
-        seats,
-        payment,
-        imageUrl,
-      });
+      const car = await Car.findByIdAndUpdate(
+        { id: req.params.id },
+        {
+          name,
+          type,
+          engine,
+          seats,
+          payPerDay,
+          imageUrl,
+        }
+      );
       res.json(car);
     } catch (error) {
       return res.json(error);
-    }
-  },
-  uploadImage: (req, res) => {
-    try {
-      res.json({
-        url: `/uploads/${req.file.originalname}`,
-      });
-    } catch (error) {
-      return res.json('Не удалось загрузить картинку');
     }
   },
 };

@@ -17,7 +17,6 @@ app.use(require('./routes/car.route'))
 
 app.use('/api/auth', userRoute);
 app.use('/api/messages', require('./routes/messages.route'));
-app.use('/uploads', express.static('uploads'));
 
 const PORT = process.env.PORT || 5000;
 
