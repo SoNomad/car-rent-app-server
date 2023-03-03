@@ -21,6 +21,7 @@ module.exports.carsController = {
   getCars: async (req, res) => {
     try {
       const cars = await Car.find();
+
       return res.json(cars);
     } catch (error) {
       return res.status(401).json(error);
