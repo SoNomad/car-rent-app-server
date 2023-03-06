@@ -54,7 +54,7 @@ module.exports.bookingController = {
 
   getBooks: async (req, res) => {
     try {
-      const bookings = await Booking.find().populate('_carId', 'name engine payPerDay');
+      const bookings = await Booking.find().populate('_carId', 'name engine payPerDay imageUrl');
       return res.json(bookings);
     } catch (error) {
       return res.json(error);
