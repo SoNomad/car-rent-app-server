@@ -18,30 +18,22 @@ module.exports.carsController = {
       return res.json(e);
     }
   },
-  getCars: async (req, res) => {
-    try {
-      const cars = await Car.find();
-
-      return res.json(cars);
-    } catch (error) {
-      return res.status(401).json(error);
-    }
-  },
 
   getCarsByPage: async (req, res, next) => {
     const ITEMS_PER_PAGE = 2;
     const page = req.query.page || 1;
+    const { type } = req.params || 'car';
 
     try {
-      const count = await Car.find().countDocuments();
+      const count = await Car.find({ type: type }).countDocuments();
       const pageCount = count / ITEMS_PER_PAGE;
 
-      const cars = await Car.find()
+      const transport = await Car.find({ type: type })
         .skip((page - 1) * ITEMS_PER_PAGE)
         .limit(ITEMS_PER_PAGE);
 
       return res.status(200).json({
-        cars,
+        transport,
         pageCount,
       });
     } catch (error) {
@@ -54,7 +46,7 @@ module.exports.carsController = {
 
   deleteCar: async (req, res) => {
     try {
-      const car = await Car.findByIdAndRemove(req.body.id);
+      const car = await Car.findByIdAndRemove(req.params.id);
       return res.json('авто удалено');
     } catch (error) {
       return res.json(error);

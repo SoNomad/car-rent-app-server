@@ -37,7 +37,10 @@ module.exports.bookingController = {
 
   getBooks: async (req, res) => {
     try {
-      const bookings = await Booking.find().populate('_carId', 'name engine payPerDay imageUrl');
+      const bookings = await Booking.find().populate(
+        '_carId',
+        'name type engine payPerDay imageUrl'
+      );
       return res.json(bookings);
     } catch (error) {
       return res.json(error);
@@ -89,7 +92,7 @@ module.exports.bookingController = {
         const range2End = moment(booking.toDate, 'DD-MM-YYYY');
 
         if (range1Start.isSameOrBefore(range2End) && range1End.isSameOrAfter(range2Start)) {
-          return res.json(`Данное авто уже занято с ${booking.fromDate} до ${booking.toDate}`);
+          return res.json(`Данный транспорт уже занят с ${booking.fromDate} до ${booking.toDate}`);
         }
       }
     }

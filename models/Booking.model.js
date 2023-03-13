@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const BookingSchema = new mongoose.Schema({
-  _carId: { type: mongoose.Schema.Types.ObjectId, ref: 'Car', required: true },
+  _carId: { type: mongoose.Schema.Types.ObjectId, ref: 'Car' },
   name: { type: String, required: true },
   email: { type: String, required: true },
   tel: { type: Number, required: true },
