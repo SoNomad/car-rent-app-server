@@ -13,6 +13,8 @@ app.use(express.json());
 
 app.use(require('./routes/booking.route'));
 app.use(require('./routes/car.route'));
+app.use(require('./routes/bike.route'));
+app.use(require('./routes/ship.route'));
 app.use('/api/auth', userRoute);
 app.use('/api/messages', require('./routes/messages.route'));
 
