@@ -1,47 +1,37 @@
-const Car = require('../models/Car.model');
+const Ship = require('../models/Ship.model');
 
-module.exports.carsController = {
-  addCar: async (req, res) => {
+module.exports.shipsController = {
+  addShip: async (req, res) => {
     try {
-      const { name, type, engine, seats, payPerDay, imageUrl } = req.body;
+      const { name, type, engine, payPerDay, imageUrl } = req.body;
 
-      const car = await Car.create({
+      const ship = await Ship.create({
         name,
         type,
         engine,
-        seats,
         payPerDay,
         imageUrl,
       });
-      return res.json(car);
+      return res.json(ship);
     } catch (e) {
       return res.json(e);
     }
   },
-  getCars: async (req, res) => {
-    try {
-      const cars = await Car.find();
 
-      return res.json(cars);
-    } catch (error) {
-      return res.status(401).json(error);
-    }
-  },
-
-  getCarsByPage: async (req, res, next) => {
+  getShipsByPage: async (req, res, next) => {
     const ITEMS_PER_PAGE = 2;
     const page = req.query.page || 1;
 
     try {
-      const count = await Car.find().countDocuments();
+      const count = await Ship.find().countDocuments();
       const pageCount = count / ITEMS_PER_PAGE;
 
-      const cars = await Car.find()
+      const ships = await Ship.find()
         .skip((page - 1) * ITEMS_PER_PAGE)
         .limit(ITEMS_PER_PAGE);
 
       return res.status(200).json({
-        cars,
+        ships,
         pageCount,
       });
     } catch (error) {
@@ -52,31 +42,30 @@ module.exports.carsController = {
     }
   },
 
-  deleteCar: async (req, res) => {
+  deleteShip: async (req, res) => {
     try {
-      const car = await Car.findByIdAndRemove(req.body.id);
+      await Ship.findByIdAndRemove(req.body.id);
       return res.json('авто удалено');
     } catch (error) {
       return res.json(error);
     }
   },
 
-  editCar: async (req, res) => {
+  editShip: async (req, res) => {
     try {
-      const { name, type, engine, seats, payPerDay, imageUrl } = req.body;
+      const { name, type, engine, payPerDay, imageUrl } = req.body;
 
-      const car = await Car.findByIdAndUpdate(
+      const ship = await Ship.findByIdAndUpdate(
         { id: req.params.id },
         {
           name,
           type,
           engine,
-          seats,
           payPerDay,
           imageUrl,
         }
       );
-      res.json(car);
+      res.json(ship);
     } catch (error) {
       return res.json(error);
     }
