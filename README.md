@@ -5,20 +5,20 @@
 <p>Это групповой проект, выполненный следующей командой full-stack разработчиков: </p>
 
 <h3>
-  <a href="https://github.com/AnZoro1">
-    Anzor Temirkhanov
+  <a href="https://github.com/SoNomad">
+    <img alt="SoNomad" src="https://img.shields.io/badge/-SoNomad-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </h3>
 
 <h3>
-  <a href="https://github.com/SoNomad">
-   Nurmuhammad Tasuev 
+  <a href="https://github.com/AnZoro1">
+    <img alt="Kharsaeva" src="https://img.shields.io/badge/-AnZoro1-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </h3>
 
 <h3>
   <a href="https://github.com/raininsnovv">
-   Ibragim Bakaev
+    <img alt="Movsar" src="https://img.shields.io/badge/-raininsnovv-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </h3>
 
@@ -28,7 +28,7 @@
 Backend
 <br>
 <br>
-<a href="https://github.com/AnZoro1/car-rent-app-server">
+<a href="https://github.com/SoNomad/car-rent-app-server">
 Frontend 
 </a>
 </h4>
