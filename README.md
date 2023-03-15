@@ -1,9 +1,11 @@
-# car-rent-app-server
+# Веб-сайт для аренды транспорта Samui
+---
+##### Backend
+##### [Frontend](https://github.com/SoNomad/car-rent-app-client)
 
-# Сервер веб-приложения по аренде автомобилей
-
-<p>Это групповой проект, выполненный следующей командой full-stack разработчиков: </p>
-
+## Описание
+Это групповой проект, выполненный студентами школы программирования [Intocode]("https://intocode.ru/")
+Сайт с функцией бронирования авто, мотобайков и яхт и точки доставки.
 <h3>
   <a href="https://github.com/SoNomad">
     <img alt="SoNomad" src="https://img.shields.io/badge/-SoNomad-black?style=for-the-badge&logo=github&logoColor=white" />
@@ -22,28 +24,16 @@
   </a>
 </h3>
 
-<br>
-
-<h4>
-Backend
-<br>
-<br>
-<a href="https://github.com/SoNomad/car-rent-app-server">
-Frontend 
-</a>
-</h4>
-
 ### Функционал сервера веб-приложения
+---
 
 - CRUD операции с документами
 - Авторизация
 - Бронирование
 - Сокеты
 
-Для просмотра демонстрации проекта в формате gif перейдите в <a href="https://github.com/AnZoro1/car-rent-app-client"> Frontend</a>
-
 ## Технологии проекта
-
+---
 <p>
   <img alt="Bcrypt" src="https://img.shields.io/badge/-Bcrypt-45b8d8?style=for-the-badge&logo=letsencrypt&logoColor=white" />
   <img alt="Github" src="https://img.shields.io/badge/-Github-black?style=for-the-badge&logo=github&logoColor=white" />
