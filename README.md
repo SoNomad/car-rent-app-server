@@ -1,5 +1,4 @@
 # Веб-сайт для аренды транспорта Samui
----
 ##### Backend
 ##### [Frontend](https://github.com/SoNomad/car-rent-app-client)
 
@@ -24,16 +23,14 @@
   </a>
 </h3>
 
-### Функционал сервера веб-приложения
----
-
+## Функционал сервера веб-приложения
 - CRUD операции с документами
 - Авторизация
 - Бронирование
 - Сокеты
 
 ## Технологии проекта
----
+
 <p>
   <img alt="Bcrypt" src="https://img.shields.io/badge/-Bcrypt-45b8d8?style=for-the-badge&logo=letsencrypt&logoColor=white" />
   <img alt="Github" src="https://img.shields.io/badge/-Github-black?style=for-the-badge&logo=github&logoColor=white" />
